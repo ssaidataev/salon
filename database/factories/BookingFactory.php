@@ -1,6 +1,5 @@
 <?php
 
-// database/factories/BookingFactory.php
 namespace Database\Factories;
 
 use App\Models\Booking;
@@ -15,12 +14,12 @@ class BookingFactory extends Factory
     public function definition()
     {
         return [
-            'category_id' => null, // Если не используется
             'employee_id' => Employee::factory(),
             'service_id' => Service::factory(),
             'booking_time' => $this->faker->dateTimeBetween('now', '+1 month'),
             'customer_name' => $this->faker->name,
             'customer_phone' => $this->faker->phoneNumber,
+            'price' => $this->faker->randomFloat(2, 10, 100), // Изменено на randomFloat
         ];
     }
 }

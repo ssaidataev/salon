@@ -55,7 +55,7 @@ class BookingController extends Controller
         $request->validate([
             'employee_id' => 'required|exists:employees,id',
             'service_id' => 'required|exists:services,id',
-            'booking_time' => 'required|date', // Исправлено
+            'booking_time' => 'required|date',
             'customer_name' => 'required|string',
             'customer_phone' => 'required|string',
         ]);

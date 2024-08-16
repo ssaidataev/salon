@@ -12,8 +12,7 @@ class BookingTest extends TestCase
 {
     use RefreshDatabase;
 
-    /** @test */
-    public function it_belongs_to_an_employee()
+    public function test_belongs_to_an_employee()
     {
         $employee = Employee::factory()->create();
         $booking = Booking::factory()->create(['employee_id' => $employee->id]);
@@ -22,8 +21,7 @@ class BookingTest extends TestCase
         $this->assertEquals($employee->id, $booking->employee->id);
     }
 
-    /** @test */
-    public function it_belongs_to_a_service()
+    public function test_belongs_to_a_service()
     {
         $service = Service::factory()->create();
         $booking = Booking::factory()->create(['service_id' => $service->id]);
@@ -32,4 +30,3 @@ class BookingTest extends TestCase
         $this->assertEquals($service->id, $booking->service->id);
     }
 }
-

@@ -14,7 +14,8 @@ class ServiceCategoryFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            // Добавьте другие поля, если необходимо
+            'price' => $this->faker->randomFloat(2, 10, 100),
+
         ];
     }
 }
